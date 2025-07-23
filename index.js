@@ -3,14 +3,16 @@ const path = require("path");
 const app = express();
 const porta = 1000;
 
-app.get("/home", (req, res) => {
-    res.status(200)
-    res.send("<h1>Hello Node</h1>");
+app.use(express.static(path.join(__dirname, "public")));
+
+app.get("/relogio", (req, res) => {
+    res.sendFile(path.join(__dirname, "src", "pages", "relogio.html"));
 });
 
-app.get("/users", (req, res) => {
-    res.status(200)
-    res.sendFile(path.join(__dirname, "src/pages/teste.html"))
+app.get("/sportv", (req, res) => {
+    res.sendFile(path.join(__dirname, "src", "pages", "sportv.html"));
 });
 
-app.listen(porta, () => console.log("Servidor rodando na porta " + porta));
+app.listen(porta, () => {
+    console.log("Servidor rodando na porta " + porta);
+});

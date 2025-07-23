@@ -4,7 +4,7 @@
   "description": "Testando NodeJS",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start-server": "node index.js"
   },
   "author": "M1guel.cb",
   "license": "ISC",
